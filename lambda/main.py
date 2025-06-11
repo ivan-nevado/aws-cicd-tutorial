@@ -1,8 +1,10 @@
+import os
 def handler(event, context):
     print("Event received:", event)
+    version = os.environ.get('VERSION', '0.0')
     response_body ={
         'message': 'Hello, World!',
-        'version': '1.0.0',
+        'version': version,
     }
     # Your code here
     return {
